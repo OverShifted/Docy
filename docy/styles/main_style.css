@@ -19,3 +19,12 @@ h1:hover
 {
 	text-decoration: underline;
 }
+
+p.code
+{
+	background-color: #fff5e5;
+	border: solid;
+	padding: 20px;
+	border-radius: 5px;
+	font-family: 'Consolas' ,'Courier New', Courier, monospace;
+}

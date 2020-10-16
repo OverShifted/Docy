@@ -1,4 +1,4 @@
-import Token
+from docy import Token
 
 class Scanner:
 
@@ -48,7 +48,7 @@ class Scanner:
 					is_bold = not is_bold
 					pos += 2
 
-				elif self.Source[pos : pos + 2] == '**' or self.Source[pos : pos + 2] == '__': # bold
+				elif (self.Source[pos : pos + 2] == '**' or self.Source[pos : pos + 2] == '__') and self.Source[pos + 1] != ' ': # bold
 					if is_bold:
 						self.Tokens.append(Token.Token(Token.TokenType.EndBold, None))
 					else:
@@ -56,7 +56,7 @@ class Scanner:
 					is_bold = not is_bold
 					pos += 1
 
-				elif self.Source[pos] == '*' or self.Source[pos] == '_': # italic
+				elif (self.Source[pos] == '*' or self.Source[pos] == '_') and self.Source[pos + 1] != ' ': # italic
 					if is_italic:
 						self.Tokens.append(Token.Token(Token.TokenType.EndItalic, None))
 					else:
@@ -78,4 +78,5 @@ class Scanner:
 			pos += 1
 
 		self.Tokens.append(Token.Token(Token.TokenType.CodeBlock, self.Source[start : pos]))
+		pos += 2
 		return pos
