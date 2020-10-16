@@ -1,0 +1,21 @@
+body
+{
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-size: x-large;
+	padding: 80px;
+}
+
+h1, h2, h3, h4, h5, h6
+{
+	display: table;
+}
+
+h1
+{
+	cursor: pointer;
+}
+
+h1:hover
+{
+	text-decoration: underline;
+}
