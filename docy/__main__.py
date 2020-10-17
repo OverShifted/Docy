@@ -18,7 +18,7 @@ def main():
 			html_file.write("</h{}>".format(token.TokenValue))
 
 		elif token.TokenType == Token.TokenType.CodeBlock:
-			html_file.write("\t\t<p class=\"code\">{}</p>\n".format(token.TokenValue.replace("\t", "&nbsp;&nbsp;&nbsp;&nbsp;").replace(" ", "&nbsp").replace("\n", "<br/>\n\t\t")))
+			html_file.write("\t\t<p class=\"code\">\n\t\t{}</p>\n".format(token.TokenValue[1].replace("\t", "&nbsp;&nbsp;&nbsp;&nbsp;").replace(" ", "&nbsp;").replace("\n", "<br/>\n\t\t")))
 		elif token.TokenType == Token.TokenType.InlineCodeBlock:
 			html_file.write("<span class=\"code\">{}</span>".format(token.TokenValue))
 

@@ -94,11 +94,17 @@ class Scanner:
 			pos += 1
 
 	def CodeBlock(self, pos):
-		start = pos
+		language = ""
+		language_ended = False
 		while pos + 3 < len(self.Source) and self.Source[pos : pos + 3] != '```':
+			if not language_ended and self.Source[pos] == "\n":
+				start = pos + 1
+				language_ended = True
+			if not language_ended:
+				language += self.Source[pos]
 			pos += 1
 
-		self.Tokens.append(Token.Token(Token.TokenType.CodeBlock, self.Source[start : pos]))
+		self.Tokens.append(Token.Token(Token.TokenType.CodeBlock, [language, self.Source[start : pos]]))
 		pos += 2
 		return pos
 	

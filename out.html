@@ -42,15 +42,15 @@
 		<h3>On Linux</h3>
 		On Linux on the other hand; Preamke's <span class="code">gmake2</span> generator is just trash. it's dependency manager is garbage and build's are too slow because of <span class="code">make</span>.
 		I use <span class="code">CMake</span>'s <span class="code">ninja</span> generator to build. Ninja it super fast and uses all cpu core's. You can use make but its slow.
-		<p class="code">bash<br/>
-		#&nbspwe&nbspare&nbspin&nbspproject's&nbsproot&nbspdirectory<br/>
-		#&nbsp'mkdir&nbspbuild'&nbspis&nbspnot&nbspneeded<br/>
-		cmake&nbsp-S&nbsp.&nbsp-B&nbspbuild&nbsp-G&nbspNinja<br/>
+		<p class="code">
+		#&nbsp;we&nbsp;are&nbsp;in&nbsp;project's&nbsp;root&nbsp;directory<br/>
+		#&nbsp;'mkdir&nbsp;build'&nbsp;is&nbsp;not&nbsp;needed<br/>
+		cmake&nbsp;-S&nbsp;.&nbsp;-B&nbsp;build&nbsp;-G&nbsp;Ninja<br/>
 		<br/>
-		#&nbspTo&nbspbuild<br/>
-		cmake&nbsp--build&nbspbuild<br/>
-		#&nbspor<br/>
-		cd&nbspbuild<br/>
+		#&nbsp;To&nbsp;build<br/>
+		cmake&nbsp;--build&nbsp;build<br/>
+		#&nbsp;or<br/>
+		cd&nbsp;build<br/>
 		ninja<br/>
 		</p>
 
