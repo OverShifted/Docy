@@ -2,13 +2,8 @@ from enum import Enum
 
 class TokenType(Enum):
 	
-	# Headers
-	H1 = 1
-	H2 = 2
-	H3 = 3
-	H4 = 4
-	H5 = 5
-	H6 = 6
+	BeginHeader = 1
+	EndHeader = 2
 
 	Text = 7
 
@@ -19,6 +14,15 @@ class TokenType(Enum):
 	EndBold = 11
 
 	CodeBlock = 12
+	InlineCodeBlock = 13
+
+	BeginUnorderedList = 14
+	BeginUnorderedListItem = 15
+	EndUnorderedListItem = 16
+	EndUnorderedList = 17
+
+	Image = 18
+	Link = 19
 
 class Token:
 

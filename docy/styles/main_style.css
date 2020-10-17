@@ -28,3 +28,11 @@ p.code
 	border-radius: 5px;
 	font-family: 'Consolas' ,'Courier New', Courier, monospace;
 }
+
+span.code
+{
+	background-color: #ffeac8;
+	padding: 2px 5px;
+	border-radius: 5px;
+	font-family: 'Consolas' ,'Courier New', Courier, monospace;
+}
