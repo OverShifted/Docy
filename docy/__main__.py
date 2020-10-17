@@ -1,11 +1,23 @@
 import sys
-import argparse
 
 from docy import Scanner, Token
 
 def main():
-	html_file = open("out.html", 'w');
-	md_file = open("test.md", 'r');
+
+	in_uri = ""
+	out_uri = "out.html"
+
+	if len(sys.argv[1:]) == 1:
+		in_uri = sys.argv[1:][0]
+	elif len(sys.argv[1:]) == 3 and (sys.argv[1:][1] == "-o" or sys.argv[1:][1] == "-O"):
+		in_uri = sys.argv[1:][0]
+		out_uri = sys.argv[1:][2]
+	else:
+		print("Usage: python -m docy <input> [-O <output>]")
+		sys.exit(0)
+
+	html_file = open(out_uri, 'w');
+	md_file = open(in_uri, 'r');
 	scanner = Scanner.Scanner(md_file.read())
 	scanner.ScanTokens()
 
